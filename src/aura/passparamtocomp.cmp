@@ -6,6 +6,6 @@
     {!v.acc1}
     <br/>
     <br/> 
-    <c:testcomp4 acc="{!v.acc1}"/>
+    <c:passparamtocomp2 acc="{!v.acc1}"/>
 
 </aura:component>
