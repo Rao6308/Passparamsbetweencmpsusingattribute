@@ -1,0 +1,11 @@
+<aura:component controller="passparamtocompcontroller " implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:attribute name="acc1" type="String"/>
+    <b><ui:outputtext value="String val of acc"/></b>
+    <br/>
+    {!v.acc1}
+    <br/>
+    <br/> 
+    <c:testcomp4 acc="{!v.acc1}"/>
+
+</aura:component>

@@ -1,0 +1,34 @@
+<aura:component controller="passparamtocompcontroller" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="acc" type="String" />
+    <aura:attribute name="account_list" type="list"/>
+    
+    <b><ui:outputtext value="Account val from comp 1 after formatting using json.stringify and json.deserealize"/></b>
+    <br/>
+    <br/>
+    <lightning:button variant="brand" label="Fetch account data" iconName="utility:download" iconPosition="left" onclick="{! c.doInit }" />
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Id</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Account Name"> Name</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.account_list}" var="obj">
+                <tr>                  
+                    <td >
+                        <ui:outputtext value="{!obj.Id}"/>
+                    </td>
+                    <td>
+                        <ui:outputtext value="{!obj.Name}"/>
+                    </td>
+                </tr>            
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+</aura:component>

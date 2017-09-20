@@ -1,0 +1,13 @@
+public class passparamtocompcontroller {
+    @AuraEnabled
+    public static string getAccounts() {
+        list<account> accs = [select id,name from Account limit 100];
+        return json.serialize(accs);
+    }
+    
+    @AuraEnabled
+    public static List<account> pushAccounts(String json_str){
+            List<Sobject> account = (List<Sobject>)JSON.deserialize(json_str, List<Sobject>.class);
+        return account;
+    }
+}
